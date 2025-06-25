@@ -1,13 +1,15 @@
 #pragma once
-#include<string>
+#include <string>
+
 enum PieceType { KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN, EMPTY };
-enum Color { WHITE, BLACK, NONE };
+enum Color { WHITE, BLACK };
 
 class Piece {
 public:
     PieceType type;
     Color color;
 
-    Piece(PieceType t = EMPTY, Color c = NONE);
+    Piece();
+    Piece(PieceType t, Color c);
     std::string symbol() const;
 };

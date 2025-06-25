@@ -5,17 +5,11 @@ class Player {
 public:
     Color color;
     Player(Color c) : color(c) {}
-    virtual bool makeMove(Board& board) = 0;
+    virtual bool makeMove(Board& board, std::string& moveNotation) = 0; // changed
 };
 
 class HumanPlayer : public Player {
 public:
     HumanPlayer(Color c);
-    bool makeMove(Board& board) override;
-};
-
-class AIPlayer : public Player {
-public:
-    int maxDepth;
-    bool makeMove(Board& board) override;
+     bool makeMove(Board& board, std::string& moveNotation) override;
 };

@@ -2,6 +2,12 @@
 #include <iostream>
 using namespace std;
 
+#define RESET   "\033[0m"
+#define B_WHITE "\033[47m"
+#define B_BLACK "\033[100m"
+#define FG_W    "\033[30m"   // Black text for white pieces
+#define FG_B    "\033[31m"   // Red text for black pieces
+
 Board::Board() : turn(WHITE) {
     for (int i = 0; i < 8; ++i)
         for (int j = 0; j < 8; ++j)
@@ -30,16 +36,20 @@ Board::Board() : turn(WHITE) {
 }
 
 void Board::print() const {
-    cout << "  a b c d e f g h\n\n";
+    cout << "   a  b  c  d  e  f  g  h  \n\n";
     for (int i = 0; i < 8; ++i) {
-        cout << 8 - i << ' ';
+        cout << 8 - i << " ";
         for (int j = 0; j < 8; ++j) {
-            cout << board[i][j].symbol() << ' ';
+            cout << "|";
+            string bg = ((i + j) % 2 == 0) ? B_WHITE : B_BLACK;
+            string fg = (board[i][j].color == WHITE) ? FG_W : FG_B;
+            cout << bg << fg << board[i][j].symbol() << " " << RESET;
         }
-        cout << 8 - i << '\n' << '\n';
+        cout << "|" << " " << 8 - i << "\n";
     }
-    cout << "  a b c d e f g h\n\n";
+    cout <<"\n   a  b  c  d  e  f  g  h  \n\n";
 }
+
 
 bool Board::inBoard(int x, int y) const {
     return x >= 0 && x < 8 && y >= 0 && y < 8;

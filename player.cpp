@@ -25,7 +25,7 @@ PieceType promotionCharToType(char c) {
 
 HumanPlayer::HumanPlayer(Color c) : Player(c) {}
 
-bool HumanPlayer::makeMove(Board& board) {
+bool HumanPlayer::makeMove(Board& board, std::string& moveNotation) {
     while (true) {
         cout << "Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): ";
         string moveStr;
@@ -166,6 +166,7 @@ bool HumanPlayer::makeMove(Board& board) {
             // If no explicit promotion, promote to Queen by default
             board.board[x2][y2] = Piece(QUEEN, color);
         }
+        moveNotation=moveStr;
         break;
     }
     return true;
