@@ -19,6 +19,7 @@ public:
     std::vector<std::pair<int, int>> getLegalMovesForPiece(int x, int y) const;
     int evaluate() const;
     bool isKingInCheck(Color color) const;
+    void moveWithoutTurnChange(int x1, int y1, int x2, int y2);
     bool isCheckmate(Color color) const;
     bool isStalemate(Color color) const;
     // --- End additions ---

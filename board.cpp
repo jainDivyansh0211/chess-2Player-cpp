@@ -77,13 +77,19 @@ vector<tuple<int, int, int, int>> Board::getLegalMoves(Color color) const {
         for (int j = 0; j < 8; ++j) {
             if (board[i][j].color == color) {
                 auto pieceMoves = getLegalMovesForPiece(i, j);
-                for (auto& [x2, y2] : pieceMoves)
-                    moves.push_back({i, j, x2, y2});
+                for (auto& [x2, y2] : pieceMoves) {
+                    Board temp = *this;
+                    temp.moveWithoutTurnChange(i, j, x2, y2); 
+                    if (!temp.isKingInCheck(color)) {
+                        moves.push_back({i, j, x2, y2});
+                    }
+                }
             }
         }
     }
     return moves;
 }
+
 
 vector<pair<int, int>> Board::getLegalMovesForPiece(int x, int y) const {
     vector<pair<int, int>> moves;
@@ -251,6 +257,14 @@ bool Board::isKingInCheck(Color color) const {
         }
     }
     return false;
+}
+
+void Board::moveWithoutTurnChange(int x1, int y1, int x2, int y2) {
+    Piece& src = board[x1][y1];
+    Piece& dst = board[x2][y2];
+    dst = src;
+    src = Piece();
+    // Do NOT update 'turn' here
 }
 
 bool Board::isCheckmate(Color color) const {
