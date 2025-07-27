@@ -92,11 +92,6 @@ PGN Output:
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 ...
 ```
 
----
-
-
----
-
 ## 👨‍💻 Author
 
 **Divyansh Jain**  
@@ -109,3 +104,23 @@ PGN Output:
 ## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+
+---
+
+![chessmate_pdf_image_0_X7.png](chessmate_pdf_image_0_X7.png)
+
+![chessmate_pdf_image_0_X9.png](chessmate_pdf_image_0_X9.png)
+
+![chessmate_pdf_image_1_X13.png](chessmate_pdf_image_1_X13.png)
+
+![chessmate_pdf_image_1_X14.png](chessmate_pdf_image_1_X14.png)
+
+![chessmate_pdf_image_2_X17.png](chessmate_pdf_image_2_X17.png)
+
+![chessmate_pdf_image_3_X20.png](chessmate_pdf_image_3_X20.png)
+
+![chessmate_pdf_image_3_X21.png](chessmate_pdf_image_3_X21.png)
+
+![chessmate_pdf_image_4_X24.png](chessmate_pdf_image_4_X24.png)
+
