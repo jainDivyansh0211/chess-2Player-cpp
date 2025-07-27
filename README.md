@@ -94,12 +94,6 @@ PGN Output:
 
 ---
 
-## 🏗️ Future Enhancements
-
-- [ ] Add AI Player with Minimax
-- [ ] En Passant Capture Support
-- [ ] Save & Load PGN Game State
-- [ ] Network Multiplayer Mode
 
 ---
 
